@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<link rel="icon" type="image/png" href="fav.jpeg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot - Agnaldo</title>
+  <style>
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      background-color: #1a1a1a; 
+      color: #e0e0e0; 
+      overflow: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 15px solid transparent;
+      border-image: linear-gradient(45deg, #ff007f, #00ffb3, #007bff, #ffb300) 1;
+      border-radius: 20px;
+      z-index: -1;
+      animation: borderGlow 4s infinite linear;
+      filter: blur(10px); 
+    }
+
+    @keyframes borderGlow {
+      0% { border-image-source: linear-gradient(45deg, #ff007f, #00ffb3, #007bff, #ffb300); }
+      50% { border-image-source: linear-gradient(135deg, #00ffb3, #007bff, #ffb300, #ff007f); }
+      100% { border-image-source: linear-gradient(45deg, #ff007f, #00ffb3, #007bff, #ffb300); }
+    }
+
+    .logo {
+      width: 250px;
+      margin-bottom: 20px;
+      filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    .date {
+      font-size: 1.2em;
+      color: #00ff7f;
+      font-weight: bold;
+      margin: 10px 0;
+      padding: 8px 15px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .authors {
+      font-size: 1em;
+      margin: 5px 0;
+      color: #cccccc;
+    }
+
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .chat-button {
+      padding: 20px 40px;
+      font-size: 1.5em;
+      color: #fff;
+      background-color: #222;
+      border: 2px solid #007bff;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+    }
+
+    .chat-button:hover {
+      background-color: #007bff;
+      color: #fff;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
+    }
+
+    .chat-button:active {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    }
+
+    .chat-button::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: rgba(0, 123, 255, 0.3);
+      border-radius: 40px;
+      z-index: -1;
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+      filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Logo da Escola" class="logo">
+
+  <div class="date" id="current-date"></div>
+
+  <div class="authors">Lariane, Raphela, Nicole e Caio T.</div>
+
+  <div class="button-container">
+    <a href="https://poe.com/agnaldo" class="chat-button" target="_blank">Acessar Chatbot</a>
+  </div>
+
+  <script>  
+    const data = new Date();
+    const diasSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+    const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+
+    const diaSemana = diasSemana[data.getDay()];
+    const dia = data.getDate();
+    const mes = meses[data.getMonth()];
+    const ano = data.getFullYear();
+
+    document.getElementById('current-date').textContent = `Hoje é ${diaSemana}, ${dia} de ${mes} de ${ano}.`;
+  </script>
+<link rel="icon" type="image/png" href="caminho/para/seu/favicon.png">
+
+</body>
+</html>
